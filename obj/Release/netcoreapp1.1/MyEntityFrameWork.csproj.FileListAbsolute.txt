@@ -1,0 +1,6 @@
+F:\VS2017 Project\MyEntityFrameWork\bin\Release\netcoreapp1.1\MyEntityFrameWork.deps.json
+F:\VS2017 Project\MyEntityFrameWork\bin\Release\netcoreapp1.1\MyEntityFrameWork.dll
+F:\VS2017 Project\MyEntityFrameWork\bin\Release\netcoreapp1.1\MyEntityFrameWork.pdb
+F:\VS2017 Project\MyEntityFrameWork\obj\Release\netcoreapp1.1\MyEntityFrameWork.AssemblyInfo.cs
+F:\VS2017 Project\MyEntityFrameWork\obj\Release\netcoreapp1.1\MyEntityFrameWork.dll
+F:\VS2017 Project\MyEntityFrameWork\obj\Release\netcoreapp1.1\MyEntityFrameWork.pdb
