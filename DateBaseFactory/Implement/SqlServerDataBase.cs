@@ -32,7 +32,8 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
                 var Record = (IDataRecord)Result;
                 AddOneObjectToList(ref AllInfoList, Record);
             }
-            Result.Close();
+           
+            Result.Dispose();
             return AllInfoList;
         }
 
@@ -75,7 +76,6 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
         {
             return base.Configuration.GetConnectionString("UserInfoContext");
         }
-
 
     }
 }
