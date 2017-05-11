@@ -18,7 +18,7 @@ namespace MyEntityFrameWork.DateBaseFactory.BaseClass
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             Configuration = builder.Build();
         }
-
+        protected abstract void AddOneObjectToList<T>(ref List<T> objectList, IDataRecord record) where T : new();
         protected abstract string DatabaseConncetionString();
         public abstract List<T> GetAllInfo<T>() where T : new();
         public abstract bool Add(object data);

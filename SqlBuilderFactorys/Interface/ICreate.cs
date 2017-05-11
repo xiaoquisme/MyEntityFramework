@@ -1,4 +1,4 @@
-﻿namespace MyEntityFrameWork.SqlBuilderFactory.Interface
+﻿namespace MyEntityFrameWork.SqlBuilderFactorys.Interface
 {
     public interface ICreate
     {

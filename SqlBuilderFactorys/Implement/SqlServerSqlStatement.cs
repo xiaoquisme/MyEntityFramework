@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MyEntityFrameWork.SqlBuilderFactory.Interface;
+using MyEntityFrameWork.SqlBuilderFactorys.Interface;
 using MyEntityFrameWork.TypeHelperFactorys;
 
-namespace MyEntityFrameWork.SqlBuilderFactory.Implement
+namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
 {
-    public class SqlBuilderFactory : ICreate, IRead, IUpdate, IDelete
+    public class SqlServerSqlStatement :ISqlStatementBuilder
     {
 
         #region  获取Insertsql语句 实现ICreate接口
