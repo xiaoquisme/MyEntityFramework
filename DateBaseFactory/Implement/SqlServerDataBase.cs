@@ -35,12 +35,12 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
                 var Record = (IDataRecord)Result;
                 AddOneObjectToList(ref AllInfoList, Record);
             }
-           
+
             Result.Dispose();
             return AllInfoList;
         }
 
-        protected override void AddOneObjectToList<T>(ref List<T> objectList, IDataRecord record) 
+        private void AddOneObjectToList<T>(ref List<T> objectList, IDataRecord record) where T : new()
         {
             //获取所有的特性名称
             //查找record中的字段名称是否相同
@@ -77,7 +77,7 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
 
         protected override string DatabaseConncetionString()
         {
-            return base.Configuration.GetConnectionString("UserInfoContext");
+            return base.Configuration.GetConnectionString("DataContext");
         }
 
     }
