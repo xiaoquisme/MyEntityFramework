@@ -13,8 +13,6 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
 {
     public class SqlServerDatabase : BasicsDatabase
     {
-        private ISqlStatementBuilder SqlBuilder;
-
         public SqlServerDatabase() : base()
         {
             base.Connection = new SqlConnection(DatabaseConncetionString());
@@ -22,7 +20,7 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
             base.Command = new SqlCommand();
             Command.Connection = base.Connection;
             //这里重要
-            SqlBuilder = SqlBuilderFactory.GetInstance(DataBaseType.SqlServer);
+            base.SqlBuilder = SqlBuilderFactory.GetInstance(DataBaseType.SqlServer);
         }
 
         public override List<T> GetAllInfo<T>()

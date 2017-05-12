@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using MyEntityFrameWork.SqlBuilderFactorys.Interface;
 
 namespace MyEntityFrameWork.DateBaseFactory.BaseClass
 {
     public abstract class BasicsDatabase
     {
+        protected ISqlStatementBuilder SqlBuilder { get; set; }
         protected IDbConnection Connection { get; set; }
         public IConfigurationRoot Configuration { get; }
         protected IDbCommand Command { get; set; }
