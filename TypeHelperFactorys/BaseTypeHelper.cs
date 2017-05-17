@@ -55,10 +55,9 @@ namespace MyEntityFrameWork.TypeHelperFactorys
                 MethodInfo info = t.GetMethod(MethodName);
                 return info.Invoke(instance, param);
             }
-            catch (Exception e)
+            catch 
             {
-                Console.WriteLine("方法没有找到，" + e);
-                throw;
+                throw new Exception("方法没有找到");
             }
 
         }
