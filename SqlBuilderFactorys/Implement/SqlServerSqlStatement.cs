@@ -1,6 +1,7 @@
 ﻿using MyEntityFrameWork.SqlBuilderFactorys.Interface;
 using MyEntityFrameWork.TypeHelperFactorys;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -35,6 +36,11 @@ namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
                                    select item.Key;
             var PropertyValueList = from item in PropertyNameAndValueDictionary
                                     select item.Value;
+            //这是新的代码 用元组实现 作用似乎不大
+            //已经注释掉
+            //var  result = from item in PropertyNameAndValueDictionary
+            //             select new Tuple<string , object>(item.Key, item.Value);
+          
             #endregion
 
             string sql1 = string.Join(",", PropertyNameList);
