@@ -72,10 +72,11 @@ namespace MyEntityFrameWork.DateBaseFactory.Implement
             return Command.ExecuteNonQuery() > 0;
         }
 
-        protected override string DatabaseConncetionString()
-        {
-            return base.Configuration.GetConnectionString("DataContext");
-        }
+        protected override string DatabaseConncetionString() => 
+                              base.Configuration.GetConnectionString("DataContext");
+        //{
+        //    return base.Configuration.GetConnectionString("DataContext");
+        //}
 
     }
 }
