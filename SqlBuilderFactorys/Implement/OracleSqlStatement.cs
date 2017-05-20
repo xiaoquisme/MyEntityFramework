@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MyEntityFrameWork.SqlBuilderFactorys.Interface;
+﻿using MyEntityFrameWork.SqlBuilderFactorys.Interface;
+using System;
 
 namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
 {
-    public class OracleSqlStatement : ISqlStatementBuilder
+    internal class OracleSqlStatement : ISqlStatementBuilder
     {
         public string CreateSqlString(object obj)
         {

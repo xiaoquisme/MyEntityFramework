@@ -1,6 +1,6 @@
 ﻿namespace MyEntityFrameWork.SqlBuilderFactorys.Interface
 {
-    public interface IDelete
+    internal  interface IDelete
     {
         string DeleteSqlString(object obj);
        

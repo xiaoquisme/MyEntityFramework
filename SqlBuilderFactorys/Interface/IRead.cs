@@ -1,6 +1,6 @@
 ﻿namespace MyEntityFrameWork.SqlBuilderFactorys.Interface
 {
-    public interface IRead
+    internal interface IRead
     {
         string ReadSqlString(object obj);
     }

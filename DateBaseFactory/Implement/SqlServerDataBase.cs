@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MyEntityFrameWork.DateBaseFactory.BaseClass;
+using MyEntityFrameWork.SqlBuilderFactorys;
+using MyEntityFrameWork.TypeHelperFactorys;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using MyEntityFrameWork.SqlBuilderFactorys;
-using MyEntityFrameWork.SqlBuilderFactorys.Interface;
-using MyEntityFrameWork.TypeHelperFactorys;
 
 
 namespace MyEntityFrameWork.DateBaseFactory.Implement

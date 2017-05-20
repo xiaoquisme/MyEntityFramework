@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace MyEntityFrameWork.TypeHelperFactorys
 {
-    public static class BaseTypeHelper
+    internal static class BaseTypeHelper
     {
         #region 获取单个成员
         private static MemberInfo GetOneMember(Type t, string MemberName)

@@ -1,6 +1,6 @@
 ﻿namespace MyEntityFrameWork.SqlBuilderFactorys.Interface
 {
-    public interface IUpdate
+    internal  interface IUpdate
     {
         string UpdateSqlString(object obj);
     }

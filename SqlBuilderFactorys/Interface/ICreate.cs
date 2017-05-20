@@ -1,6 +1,6 @@
 ﻿namespace MyEntityFrameWork.SqlBuilderFactorys.Interface
 {
-    public interface ICreate
+    internal  interface ICreate
     {
         string CreateSqlString(object obj);
     }

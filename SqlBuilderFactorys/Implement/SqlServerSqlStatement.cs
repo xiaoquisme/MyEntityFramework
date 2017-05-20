@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MyEntityFrameWork.SqlBuilderFactorys.Interface;
+using MyEntityFrameWork.TypeHelperFactorys;
+using System;
 using System.Linq;
 using System.Text;
-using MyEntityFrameWork.SqlBuilderFactorys.Interface;
-using MyEntityFrameWork.TypeHelperFactorys;
 
 namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
 {
-    public class SqlServerSqlStatement :ISqlStatementBuilder
+    internal class SqlServerSqlStatement :ISqlStatementBuilder
     {
 
         #region  获取Insertsql语句 实现ICreate接口
@@ -19,7 +18,9 @@ namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
             var PrimaryKeyName = TypeHelperFactory.GetPrimaryKey(type);
             var PropertyNameAndValueDictionary = TypeHelperFactory.GetAllPropertyNameAndValueDictionary(obj);
             PropertyNameAndValueDictionary.Remove(PrimaryKeyName);
-            //这里进行了修改 2017-5-17 17：10 
+
+            #region 这里进行了修改 2017-5-17 17：10 以后考虑用元组实现
+
             //这是原来的代码
             //var PropertyNameList = new List<string>();
             //var PropertyValueList = new List<object>();           
@@ -29,10 +30,13 @@ namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
             //    PropertyValueList.Add(item.Value);
             //}
             //这是新的代码 测试已通过 以后考虑用元组实现 2017-5-17 17：15
+            
             var PropertyNameList = from item in PropertyNameAndValueDictionary
                                    select item.Key;
             var PropertyValueList = from item in PropertyNameAndValueDictionary
                                     select item.Value;
+            #endregion
+
             string sql1 = string.Join(",", PropertyNameList);
             string sql2 = "'";
             sql2 += string.Join("','", PropertyValueList);
@@ -73,7 +77,9 @@ namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
             var PrimaryKeyValue = TypeHelperFactory.GetPrimaryKeyValue(obj, PrimaryKeyName);
             var PropertyNameAndValueDictionary = TypeHelperFactory.GetAllPropertyNameAndValueDictionary(obj);
             PropertyNameAndValueDictionary.Remove(PrimaryKeyName);
-            //这里进行了修改 2017-5-17 17：00
+
+            #region 这里进行了修改 2017-5-17 17：00      
+            //
             //这是原来的代码
             //var NameAndValueList = new List<string>();
             //foreach (var item in PropertyNameAndValueDictionary)
@@ -84,6 +90,8 @@ namespace MyEntityFrameWork.SqlBuilderFactorys.Implement
             //这是新的代码 2017-5-17 17：00 测试已通过
             var NameAndValueList = from item in PropertyNameAndValueDictionary
                                    select $"{item.Key}='{item.Value}'";
+            #endregion
+
             string sql = string.Join(",", NameAndValueList);
             StringBuilder sqlStatement = new StringBuilder();
             sqlStatement.AppendFormat(

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using System.Text.RegularExpressions;
 
 namespace MyEntityFrameWork.TypeHelperFactorys
 {
-    public static class TypeHelperFactory
+    internal static class TypeHelperFactory
     {
         #region GetAllPropertyList
 
