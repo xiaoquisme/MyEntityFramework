@@ -15,10 +15,10 @@ namespace MyEntityFrameWork.TypeHelperFactorys
         #endregion
 
         #region 获取所有成员
-        public  static MemberInfo[] GetAllMembers(Type t)
-        {
-            return t.GetMembers();
-        }
+        public static MemberInfo[] GetAllMembers(Type t) => t.GetMembers();
+        //{
+        //    return t.GetMembers();
+        //}
 
         #endregion
 
